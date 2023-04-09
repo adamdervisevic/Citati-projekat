@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forme</title>
+</head>
+<body>
+        <form action="test.php" method="get">
+            <fieldset class="login">
+                <!--Prvi deo, login details-->
+                <legend>Login details</legend>
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div>
+                    <label for="em">Email: </label>
+                    <input type="email" name="em" id="em">
+                </div>
+                <div>
+                    <label for="pass">Password: </label>
+                    <input type="password" name="pass" id="pass">
+                </div>
+            </fieldset>
+
+            <fieldset class="feedback">
+                <!--Drugi deo, your feedback-->
+                <legend>Your feedback</legend>
+                <!--Emotions-->
+                <label for="emotions" class="emotions">Please check all the emotions that apply to you:</label>
+                <div>
+                    <label for="angry">Angry</label>
+                    <input type="checkbox" name="emotions" id="angry" value="angry"> 
+                </div>
+                <div>
+                    <label for="">Sad</label>
+                    <input type="checkbox" name="emotions" id="sad" value="sad">
+                </div>
+                <div>
+                    <label for="">Happy</label>
+                    <input type="checkbox" name="emotions" id="happy" value="happy" checked="checked"> 
+                </div>
+                <div>
+                    <label for="">Ambivalent</label>
+                    <input type="checkbox" name="emotions" id="ambivalent" value="ambivalent">
+                </div>
+                <!--Satisfied-->
+                <label for="satisfaction" class="satisfaction">How satisfied were you with our service?</label>
+                    <div>
+                        <label for="">Very satisfied</label>
+                        <input type="radio" name="satisfaction" id="vs" value="vs">
+                    </div>
+                    <div>
+                        <label for="satisfaction">Satisfied</label>
+                        <input type="radio" name="satisfaction" id="sd" value="sd">
+                    </div>
+                    <div>
+                        <label for="satisfaction">Didn't care</label>
+                        <input type="radio" name="satisfaction" id="dc" value="dc">
+                    </div>
+                    <div>
+                        <label for="satisfaction">Dissatisfied</label>
+                        <input type="radio" name="satisfaction" id="ds" value="ds">
+                    </div>
+                    <div>
+                        <label for="satisfaction">Very dissatisfied</label>
+                        <input type="radio" name="satisfaction" id="vd" value="vd">
+                    </div>
+                <label for="comments" class="comments">Further comments: </label>
+                <textarea name="comments" id="comments" cols="20" rows="3"></textarea>
+                </fieldset>
+                <!--Poslednji deo-->
+
+                <div class="bio">
+                    <label for="photo">Bio photo:</label>
+                    <input type="file" name="photo" id="photo" size="50">
+                </div>
+
+                <div class="location">
+                <label for="location">Location visited:</label>
+                <select name="location" id="location">
+                        <option value="">Select location</option>
+                        <option value="tokyo">Tokyo</option>
+                        <option value="soul">Soul</option>
+                        <option value="belgrade">Belgrade</option>
+                        <option value="nis">Nis</option>
+                </select>
+                </div>
+
+                <div class="sub">
+                    <input type="submit" value="Submit">
+                </div>
+                <div class="reset">
+                    <input type="reset" value="reset">
+                </div>
+        </form>
+</body>
+</html>
