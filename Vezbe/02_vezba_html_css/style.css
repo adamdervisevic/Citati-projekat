@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    background-color: #9F76B2;
+    color: #483248;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+.dva-naslova {
+    color: #5D071C;
+}
+h1 {
+    text-align: center;
+}
+span {
+    color: orange;
+}
+img {
+    width: 400px;
+    height: 300px;
+    border: 7px dotted #5D071C;
+}
