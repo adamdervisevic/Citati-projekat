@@ -1,0 +1,192 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+[class*="col-"]{
+    float: left;
+}
+[class*="col-"] {
+    width: 100%;
+}
+.col-4 {
+    width: calc(100%/12*4);
+}
+.col-8 {
+    width: calc(100%/12*8);
+}
+.col-12 {
+    width: 100%;
+}
+header {
+    background-color: orange;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+nav ul li{
+    padding: 15px;
+    background-color: orange;
+}
+ul li a {
+    color: black;
+    display: block;
+    text-decoration: none;
+}
+nav ul li:hover {
+    background-color: rgb(255, 181, 45);
+    border: 1px solid black;
+}
+aside {
+    margin: 10px;
+}
+aside p {
+    width: 100%;
+}
+img {
+    width: 100%;
+    height: 23rem;
+    margin-bottom: 1px;
+}
+img:hover {
+    opacity: 0.5;
+}
+
+.prijavi-se p {
+    background-color: green;
+}
+.prijavi-se ul {
+    background-color: #3399ff;
+    padding: 10px 10px;
+    color: blue;
+}
+.prijavi-se ul>li{
+    background-color: #cce5ff;
+    margin-bottom: 3px;
+}
+.prijavi-se a {
+    padding: 5px;
+}
+.prijavi-se ol {
+    background-color: #ff9999;
+}
+.prijavi-se ol li:nth-child(2n){
+    color: red;
+}
+.prijavi-se ul ol:nth-child(2n) {
+    color: green;
+}
+ol li:nth-child(2n) {
+    background-color: #ffe5e5;
+}
+ol li:nth-child(odd) {
+    background-color: #7fffd4;
+}
+.forma h2{
+    background-color: orange;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 50px auto 0;
+}
+tr {
+    border: 1px solid black;
+    height: 50px;
+}
+td {
+    border: 1px solid black;
+}
+form {
+    margin: 10px;
+    display: block;
+    overflow: hidden;
+}
+form div {
+    padding-bottom: 10px;
+}
+form input {
+    float: right;
+    width: 70%;
+}
+form input:focus {
+    background-color: #ffd700;
+}
+form textarea {
+    float: right;
+    width: 70%;
+}
+form textarea:focus {
+    background-color: #ffd700;
+}
+input[type=submit] {
+    background-color: orange;
+    margin-top: 10px;
+    float: right;
+    width: 35%;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    border-color: white;
+}
+input[type=submit]:hover {
+    background-color: green;
+}
+footer {
+    background-color: orange;
+    text-align: center;
+}
+
+@media (min-width:600px) and (max-width:750px){
+    header {
+        background-color: orange;
+        text-align: center;
+    }
+	header:hover {
+        background-color: green;
+        cursor: pointer;
+    }
+    aside p {
+        color: green;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .row {
+        width: 100%;
+        overflow: hidden;
+    }
+    [class*="col-"]{
+        float: left;
+    }
+    [class*="col-"] {
+        width: 100%;
+    }
+    aside p {
+        color: orange;
+    }
+    .prijavi-se {
+        display: none;
+    }
+    form {
+        display: none;
+    }
+    .forma h2 {
+        display: none;
+    }
+}
+
