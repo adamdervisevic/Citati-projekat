@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
 <?php
     //Zadatak 1
 
@@ -16,6 +25,7 @@
     } else {
         echo "<p>Butik je otvoren</p>";
     }
+    
 
     //Zadatak 2
     $broj_stanovnika = 7000000;
@@ -26,8 +36,10 @@
     $ukupno = $broj_pozitivnih * 100 / $broj_stanovnika;
 
     if($dan > 30 || $ukupno > 10) {
-        echo "<p>VANREDNO STANJE!</p>";
-    } else {
-        echo "<p>Bez sekiracije!</p>";
-    }
+        echo "<p style='color: red;'>VANREDNO STANJE!</p>";
+    } 
+
 ?>
+</body>
+</html>
+
