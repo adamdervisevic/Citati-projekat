@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.row {
+    width: 100%;
+    overflow: hidden;
+}
+[class*="col-"]{
+    float: left;
+}
+[class*="col-"]{
+    width: 100%;
+}
+.main {
+    background-image: url(abstract-watercolor-pastel-background_87374-139.avif);
+    width: 30rem;
+    height: 30rem;
+}
+.row h1 {
+    background-color: #43d1af;
+    margin: 0;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+input {
+    margin: 20px auto;
+    height: 60px;
+}
+.submit {
+    position: fixed;
+    bottom: 23%;
+    width: 30rem;
+}
+input[type="submit"] {
+    overflow: hidden;
+    background-color: #43d1af;
+    color: white;
+    font-size: 1.2em;
+    box-shadow: #43d1af;
+    cursor: pointer;
+}
+
