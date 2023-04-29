@@ -41,7 +41,12 @@ input[type="submit"] {
     background-color: #43d1af;
     color: white;
     font-size: 1.2em;
-    box-shadow: #43d1af;
     cursor: pointer;
+    border: none;
 }
-
+input[type="text"], [type="email"] {
+    width: 98%;
+}
+#text {
+    width: 98%;
+}
