@@ -33,6 +33,7 @@ echo "<hr>";
     echo "Rezultat je $krajnji_proizvod";
     echo "<hr>";
 //2. Zadatak
+//a)
     $n = 2;
     $m = 4;
     $zbir = 0;
@@ -44,6 +45,16 @@ echo "<hr>";
     }
     echo "Zbir je $zbir";
     echo "<hr>";
+//b)
+    $n = 2;
+    $m = 4;
+    $zbir = 0;
+    for($i = $n; $n <= $m; $n++) {
+        if($n % 2 != 0) {
+            $zbir += pow($n, 3);
+        }
+    }
+    echo "Zbir je $zbir";
 ?>
 </body>
 </html>
