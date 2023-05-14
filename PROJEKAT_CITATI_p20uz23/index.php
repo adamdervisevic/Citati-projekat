@@ -4,14 +4,14 @@
     shuffle($slike);
 
     $categories = array('posao', 'ljubav', 'zdravlje', 'motivacija');
-if (isset($_GET['category']) && in_array($_GET['category'], $categories)) {
-    $filename = $_GET['category'] . '.txt';
-} else {
-    $filename = $categories[array_rand($categories)] . '.txt';
-}
+    if (isset($_GET['category']) && in_array($_GET['category'], $categories)) {
+        $filename = $_GET['category'] . '.txt';
+    } else {
+        $filename = $categories[array_rand($categories)] . '.txt';
+    }
 
-$citate = file($filename, FILE_IGNORE_NEW_LINES);
-$citat = $citate[array_rand($citate)];
+    $citate = file($filename, FILE_IGNORE_NEW_LINES);
+    $citat = $citate[array_rand($citate)];
 
 ?>
 
