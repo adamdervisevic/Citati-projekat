@@ -32,23 +32,23 @@
 
         public function uplati($iznos, $valuta) {
             if($valuta == "RSD") {
-                $this->Stanje += $iznos;
-                return round($this->Stanje, 2);
+                $this->Stanje = round(($this->Stanje + $iznos),2);
+                return $this->Stanje;
             } elseif($valuta == "EUR") {
-                $this->Stanje += $iznos * $this->Kurs;
-                return round($this->Stanje, 2);
+                $this->Stanje = round(($this->Stanje + $iznos * $this->Kurs),2);
+                return $this->Stanje;
             } else {
                 return "Datu valutu ne mozemo prihvatiti, pokusajte ponovo!";
             }
         }   
 
         public function isplati($iznos, $valuta) {
-            if($iznos < $this->Stanje && $valuta == "RSD") {
-                $this->Stanje -= $iznos;
-                return $iznos;
+            if($iznos <= $this->Stanje && $valuta == "RSD") {
+                $this->Stanje = round(($this->Stanje - $iznos),2);
+                return true;
             } elseif($iznos < $this->Stanje && $valuta == "EUR") {
-                $this->Stanje -+ $iznos * round($this->Kurs, 4);
-                return $iznos;
+                $this->Stanje= round((($this->Stanje - ($iznos * $this->Kurs))),2);
+                return false;
             } else {
                 return "Nemate dovoljno sredstava na racunu za isplatu.";
             }
@@ -64,8 +64,8 @@
 
     $a1 = new TekuciRacun();
     $a1->setKurs(117.28) . "<br>";
-    echo $a->uplati(200, "EUR") . "<br>";
-    echo $a->stanje() . "<br>";
+    echo $a1->uplati(200, "EUR") . "<br>";
+    echo $a1->stanje() . "<br>";
 
     $b = new TekuciRacun();
     $b->setKurs(117.28) . "<br>";
