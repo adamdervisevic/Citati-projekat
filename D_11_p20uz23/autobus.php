@@ -72,6 +72,7 @@
 
     echo ukupnoSedista($autobusi);
     echo maksSedista($autobusi);
+    
     $brojLjudi = 80;
     if (ljudi($brojLjudi, $autobusi)) {
     echo "Moguće je smestiti " . $brojLjudi . " ljudi u autobuse.";
