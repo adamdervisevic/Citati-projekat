@@ -43,16 +43,27 @@
         }   
 
         public function isplati($iznos, $valuta) {
-            if($iznos <= $this->Stanje && $valuta == "RSD") {
-                $this->Stanje = round(($this->Stanje - $iznos),2);
-                return true;
-            } elseif($iznos < $this->Stanje && $valuta == "EUR") {
-                $this->Stanje= round((($this->Stanje - ($iznos * $this->Kurs))),2);
-                return false;
+            if ($valuta == "RSD") {
+                if ($iznos <= $this->Stanje) {
+                    $this->Stanje = round(($this->Stanje - $iznos), 2);
+                    return true;
+                } else {
+                    echo "Nemate dovoljno sredstava na računu za isplatu.";
+                    return false;
+                }
+            } elseif ($valuta == "EUR") {
+                if ($iznos <= ($this->Stanje / $this->Kurs)) {
+                    $this->Stanje = round(($this->Stanje - ($iznos * $this->Kurs)), 2);
+                    return true;
+                } else {
+                    echo "Nemate dovoljno sredstava na računu za isplatu.";
+                    return false;
+                }
             } else {
-                return "Nemate dovoljno sredstava na racunu za isplatu.";
+                echo "Datu valutu ne možemo prihvatiti, pokušajte ponovo!";
+                return false;
             }
-        }
+        } // ispravljen je deo za euro
 
         public function stanje() {
             $day = date("Y/m/d");
@@ -63,22 +74,23 @@
     }
 
     $a1 = new TekuciRacun();
-    $a1->setKurs(117.28) . "<br>";
-    echo $a1->uplati(200, "EUR") . "<br>";
+    $a1->setKurs(117.28);
+    $a1->uplati(200, "EUR") . "<br>";
     echo $a1->stanje() . "<br>";
+    echo "<hr>";
 
     $b = new TekuciRacun();
-    $b->setKurs(117.28) . "<br>";
-    $b->setStanje(3000) . "<br>";
-    echo $b->isplati(300, "RSD") . "<br>";
-    echo $b->stanje();
-    
+    $b->setKurs(117.28);
+    $b->setStanje(3000);
+    echo $b->isplati(10, "EUR") . "<br>";
+    echo $b->stanje() . "<br>";
+    echo "<hr>";
 
     $c = new TekuciRacun();
-    $c->setKurs(117.28) . "<br>";
-    $c->uplati(300, "RSD") . "<br>";
-    echo $c->isplati(4000, "RSD") . "<br>";
-    $c->stanje() . "<br>";
+    $c->setKurs(117.28);
+    $c->uplati(100, "RSD");
+    echo $c->isplati(10, "EUR") . "<br>";
+    echo $c->stanje() . "<br>";
 
 
 
