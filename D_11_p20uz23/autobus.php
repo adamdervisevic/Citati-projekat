@@ -55,7 +55,7 @@
             }
         }
         if($autobusMax) {
-            echo "<p>Autobus sa najviše sedišta: Registarski broj: " . $autobusMax->getRegistarskiBroj() . ", Broj sedišta: " . $autobusMax->getBrojSedista() . "</p>";
+            echo "<p>Autobus sa najviše sedišta: Registarski broj: " . $autobusMax->ispis() . ", Broj sedišta: " . $autobusMax->getBrojSedista() . "</p>";
         } else {
             echo "Greska";
         }
