@@ -35,52 +35,33 @@
     }
 
     function boljiTip($automobili) {
-        $prosecnaUlaganjaDizel = 0;
-        $prosecnaUlaganjaBenzin = 0;
+        $zbirUlaganjaDizel = 0;
+        $zbirUlaganjaBenzin = 0;
         $brojDizel = 0;
         $brojBenzin = 0;
     
         foreach ($automobili as $auto) {
-            if (isDizelAuto($auto)) {
-                $prosecnaUlaganjaDizel += $auto->ulozenoPara();
+            $tip = $auto->getTipGoriva();
+            $ulozeno = $auto->ulozenoPara();
+            if($tip == "DIZEL") {
+                $zbirUlaganjaDizel += $ulozeno;
                 $brojDizel++;
-            } elseif (isBenzinAuto($auto)) {
-                $prosecnaUlaganjaBenzin += $auto->ulozenoPara();
+            } else if($tip == "BENZIN") {
+                $zbirUlaganjaBenzin += $ulozeno;
                 $brojBenzin++;
             }
         }
-    
-        if ($brojDizel > 0) {
-            $prosecnaUlaganjaDizel = $prosecnaUlaganjaDizel / $brojDizel;
-        } else {
-            $prosecnaUlaganjaDizel = 0;
-        }
+        $prosecnaUlaganjaDizel = $zbirUlaganjaDizel / $brojDizel;
+        $prosecnaUlaganjaBenzin = $zbirUlaganjaBenzin / $brojBenzin;
         
-        if ($brojBenzin > 0) {
-            $prosecnaUlaganjaBenzin = $prosecnaUlaganjaBenzin / $brojBenzin;
-        } else {
-            $prosecnaUlaganjaBenzin = 0;
-        }
     
         if ($prosecnaUlaganjaDizel < $prosecnaUlaganjaBenzin) {
             $tip = "DIZEL";
-        } elseif ($prosecnaUlaganjaBenzin < $prosecnaUlaganjaDizel) {
-            $tip = "BENZIN";
         } else {
-            $tip = "Jednako";
-        }
-    
+            $tip = "BENZIN";
+        } 
         return $tip;
     }
-    
-    function isDizelAuto($auto) {
-        return get_class($auto) === 'DizelAuto';
-    }
-    
-    function isBenzinAuto($auto) {
-        return get_class($auto) === 'BenzinAuto';
-    }
-    
     maksUlozeno($automobili);
     echo "<br>";
     echo "<p>Tip automobila s manjim ulaganjem na kupovinu goriva: " . boljiTip($automobili) . "</p>";
