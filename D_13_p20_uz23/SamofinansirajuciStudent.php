@@ -13,16 +13,13 @@
 
         public function __construct($i, $oe, $p, $pe) {
             parent::__construct($i, $oe, $p);
-            //promenio sam iz < u >= i > 60 u <= 60 i ovaj deo za 300
-            // ili da je ($pe + $oe) <= 300) za ovo nisam siguran
-            if($pe >= 35 && $pe <= 60 || ($pe + $oe) == 300) {
-                echo "Neispravan broj ESPB bodova";
-            } else {
+            if (($pe >= 35 && $pe <= 60) && (($pe + $oe) <= 300 || (300 - $oe) == $pe)) {
                 $this->setPrijavljeniESPB($pe);
+            } else {
+                echo "Neispravan broj ESPB bodova";
             }
-            
         }
-
+        
         public function skolarina() {
             if($this->getProsecnaOcena() < 8) {
                 return 1900 * $this->getPrijavljeniESPB();
