@@ -13,7 +13,9 @@
 
         public function __construct($i, $oe, $p, $pe) {
             parent::__construct($i, $oe, $p);
-            if($pe < 35 && $pe > 60 && ($pe + $oe) > 300) {
+            //promenio sam iz < u >= i > 60 u <= 60 i ovaj deo za 300
+            // ili da je ($pe + $oe) <= 300) za ovo nisam siguran
+            if($pe >= 35 && $pe <= 60 || ($pe + $oe) == 300) {
                 echo "Neispravan broj ESPB bodova";
             } else {
                 $this->setPrijavljeniESPB($pe);

@@ -9,7 +9,6 @@
         $student3 = new BudzetskiStudent("Mirko", 180, 8),
         $student4 = new BudzetskiStudent("Jovana", 200, 9)
     ];
-    $studenti = [$student1, $student2, $student3, $student4];
 
     function najvecaSkolarina($studenti) {
         $max = 0;
