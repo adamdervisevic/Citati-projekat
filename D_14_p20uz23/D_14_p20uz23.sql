@@ -50,12 +50,15 @@ WHERE `zanr` != 'Komedija';
 SELECT*
 FROM `filmovi`
 WHERE `ocena` = (SELECT MAX(`ocena`) FROM `filmovi`);
+LIMIT 1;
 
 --Prikazati sve informacije o najbolje rangiranoj drami.
 
 SELECT*
 FROM `filmovi`
-WHERE `ocena` = (SELECT MAX(`ocena`) FROM `filmovi` WHERE `zanr` = 'Drama');
+WHERE `zanr` = 'Drama'
+ORDER BY `ocena` DESC
+LIMIT 1;
 
 --Selektovati trojicu rezisera ciji filmovi imaju najbolje ocene.
 
@@ -85,3 +88,4 @@ ORDER BY `god_izdanja` ASC;
 
 SELECT AVG(`ocena`) AS 'prosecna_ocena'
 FROM `filmovi`
+WHERE `god_izdanja` > 2000;
